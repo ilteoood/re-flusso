@@ -1,7 +1,7 @@
 import { setTimeout } from "timers/promises";
 import { describe, expect, it } from "vitest";
 import { filter } from "../src/filter";
-import { fromArray } from "../src/fromArray";
+import { fromIterable } from "../src/fromIterable";
 import { toArray } from "../src/toArray";
 
 describe("filter", () => {
@@ -11,7 +11,7 @@ describe("filter", () => {
 
 		const filterStream = filter<number>((value) => value % 2 === 0);
 
-		await fromArray(sourceArray)
+		await fromIterable(sourceArray)
 			.pipeThrough(filterStream)
 			.pipeTo(toArray(destinationArray));
 
@@ -23,7 +23,7 @@ describe("filter", () => {
 		const destinationArray = [];
 
 		const filterStream = filter<number>(() => false);
-		await fromArray(sourceArray)
+		await fromIterable(sourceArray)
 			.pipeThrough(filterStream)
 			.pipeTo(toArray(destinationArray));
 
@@ -35,7 +35,7 @@ describe("filter", () => {
 		const filterStream = filter<number>(undefined);
 
 		expect(
-			fromArray([1])
+			fromIterable([1])
 				.pipeThrough(filterStream)
 				.pipeTo(toArray([] as number[])),
 		).rejects.toThrow("callbackfn is not a function");
@@ -49,7 +49,7 @@ describe("filter", () => {
 			await setTimeout(0)
 			return value % 2 === 0
 		});
-		await fromArray(sourceArray)
+		await fromIterable(sourceArray)
 			.pipeThrough(filterStream)
 			.pipeTo(toArray(destinationArray));
 

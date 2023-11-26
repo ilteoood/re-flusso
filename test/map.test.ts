@@ -1,6 +1,6 @@
 import { setTimeout } from "timers/promises";
 import { describe, expect, it } from "vitest";
-import { fromArray } from "../src/fromArray";
+import { fromIterable } from "../src/fromIterable";
 import { map } from "../src/map";
 import { toArray } from "../src/toArray";
 
@@ -11,7 +11,7 @@ describe("map", () => {
 
 		const mapStream = map<number, number>((value) => value * 2);
 
-		await fromArray(sourceArray)
+		await fromIterable(sourceArray)
 			.pipeThrough(mapStream)
 			.pipeTo(toArray(destinationArray));
 
@@ -23,7 +23,7 @@ describe("map", () => {
 		const destinationArray = [];
 
 		const mapStream = map<number, number>((value) => value);
-		await fromArray(sourceArray)
+		await fromIterable(sourceArray)
 			.pipeThrough(mapStream)
 			.pipeTo(toArray(destinationArray));
 
@@ -35,7 +35,7 @@ describe("map", () => {
 		const mapStream = map<number, number>(undefined);
 
 		expect(
-			fromArray([1])
+			fromIterable([1])
 				.pipeThrough(mapStream)
 				.pipeTo(toArray([] as number[])),
 		).rejects.toThrow("callbackfn is not a function");
@@ -49,7 +49,7 @@ describe("map", () => {
 			await setTimeout(0)
 			return value * 3
 		});
-		await fromArray(sourceArray)
+		await fromIterable(sourceArray)
 			.pipeThrough(mapStream)
 			.pipeTo(toArray(destinationArray));
 
