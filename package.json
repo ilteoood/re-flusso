@@ -9,7 +9,7 @@
     "format:fix": "pnpm run format --fix",
     "sort": "biome check --apply-unsafe ./src ./test",
     "lint": "biome lint ./src ./test",
-    "lint:fix": "pnpm run lint --fix",
+    "lint:fix": "biome check --apply ./src ./test",
     "test": "pnpm run \"/^test:.*/\"",
     "test:node": "vitest",
     "test:browser": "vitest --config ./vitest-browser.config.ts",
