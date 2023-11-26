@@ -1,8 +1,8 @@
 ![image](https://github.com/ilteoood/re-flusso/actions/workflows/ci.yml/badge.svg)
 
-# Re-Flusso
+# re-flusso
 
-Re-Flusso is an utility library to operate with [JavaScript Streams API](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API).
+re-flusso is an utility library to operate with [JavaScript Streams API](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API).
 
 It aims to support browsers, [Node.js](https://nodejs.org/) and [Edge Runtime](https://edge-runtime.vercel.app/).
 
