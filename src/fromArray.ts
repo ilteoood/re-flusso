@@ -1,4 +1,4 @@
-export const fromArray = <T>(array: T[]): ReadableStream<T> => {
+export const fromArray = <T>(array: T[], strategy?: QueuingStrategy): ReadableStream<T> => {
 	const arrayLength = array.length;
 	return new ReadableStream<T>({
 		start(controller) {
@@ -7,5 +7,5 @@ export const fromArray = <T>(array: T[]): ReadableStream<T> => {
 			}
 			controller.close();
 		},
-	});
+	}, strategy);
 };
