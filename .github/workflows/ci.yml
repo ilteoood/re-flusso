@@ -17,4 +17,6 @@ jobs:
         with:
           version: latest
       - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
       - run: pnpm test
+      - run: pnpm build
