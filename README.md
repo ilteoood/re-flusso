@@ -1,3 +1,5 @@
+![image](https://github.com/ilteoood/re-flusso/actions/workflows/ci.yml/badge.svg)
+
 # Re-Flusso
 
 Re-Flusso is an utility library to operate with [JavaScript Streams API](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API).
