@@ -24,12 +24,80 @@ pnpm install @ilteoood/re-flusso
 
 ### CommonJS
 ```bash
-const { fromArray } = require('@ilteoood/re-flusso');
+const { fromArray } = require('@ilteoood/re-flusso/fromArray');
 ```
-</details>
 
 ### Module
 ```bash
-import { fromArray } from '@ilteoood/re-flusso';
+import { fromArray } from '@ilteoood/re-flusso/fromArray';
+```
+
+## APIs
+
+<details>
+<summary>filter</summary>
+
+```javascript
+import { filter } from '@ilteoood/re-flusso/filter';
+
+.pipeThrough(
+    filter((value, index) => value % index === 0)
+)
+```
+</details>
+
+<details>
+<summary>fromIterable</summary>
+
+```javascript
+import { fromIterable } from '@ilteoood/re-flusso/fromIterable';
+
+// With an array
+fromIterable([1, 2, 3])
+
+// With a set
+fromIterable(new Set([1, 2, 3]))
+```
+</details>
+
+<details>
+<summary>map</summary>
+
+```javascript
+import { map } from '@ilteoood/re-flusso/map';
+
+.pipeThrough(
+    map((value, index) => value + index)   
+)
+```
+</details>
+
+<details>
+<summary>pipeline</summary>
+
+```javascript
+import { pipeline } from '@ilteoood/re-flusso/pipeline';
+
+const destinationArray = [];
+
+await pipeline(
+    fromIterable([1, 2, 3]),
+    map((value) => value * 2),
+    toArray(destinationArray),
+);
+```
+</details>
+
+<details>
+<summary>toArray</summary>
+
+```javascript
+import { toArray } from '@ilteoood/re-flusso/toArray';
+
+const destinationArray = [];
+
+.pipeTo(
+    toArray(destinationArray)
+)
 ```
 </details>
