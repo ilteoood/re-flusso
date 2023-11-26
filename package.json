@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "format": "biome format ./src ./test",
-    "format:fix": "pnpm run format --fix",
+    "format:fix": "pnpm run format --write",
     "sort": "biome check --apply-unsafe ./src ./test",
     "lint": "biome lint ./src ./test",
     "lint:fix": "biome check --apply ./src ./test",
