@@ -46,13 +46,13 @@ describe("filter", () => {
 		const destinationArray = [];
 
 		const filterStream = filter<number>(async (value) => {
-			await setTimeout(0)
-			return value % 2 === 0
+			await setTimeout(0);
+			return value % 2 === 0;
 		});
 		await fromIterable(sourceArray)
 			.pipeThrough(filterStream)
 			.pipeTo(toArray(destinationArray));
 
 		expect(destinationArray).toEqual([2]);
-	})
+	});
 });

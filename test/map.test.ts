@@ -46,13 +46,13 @@ describe("map", () => {
 		const destinationArray = [];
 
 		const mapStream = map<number, number>(async (value) => {
-			await setTimeout(0)
-			return value * 3
+			await setTimeout(0);
+			return value * 3;
 		});
 		await fromIterable(sourceArray)
 			.pipeThrough(mapStream)
 			.pipeTo(toArray(destinationArray));
 
 		expect(destinationArray).toEqual([3, 6, 9]);
-	})
+	});
 });

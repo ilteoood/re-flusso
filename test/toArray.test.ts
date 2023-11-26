@@ -30,6 +30,8 @@ describe("toArray", () => {
 
 	it("should not throw if source stream is empty", async () => {
 		// @ts-expect-error undefined parameter for test
-		expect(fromIterable([]).pipeTo(toArray(undefined))).resolves.toBeUndefined();
+		expect(
+			fromIterable([]).pipeTo(toArray(undefined)),
+		).resolves.toBeUndefined();
 	});
 });

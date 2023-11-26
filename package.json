@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "format": "biome format ./src ./test --write",
+    "sort": "biome check --apply-unsafe ./src ./test",
     "lint": "biome lint ./src ./test",
     "lint:fix": "pnpm run lint --fix",
     "test": "pnpm run \"/^test:.*/\"",
