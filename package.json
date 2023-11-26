@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "format": "biome format ./src ./test --write",
+    "format": "biome format ./src ./test",
+    "format:fix": "pnpm run format --fix",
     "sort": "biome check --apply-unsafe ./src ./test",
     "lint": "biome lint ./src ./test",
     "lint:fix": "pnpm run lint --fix",
