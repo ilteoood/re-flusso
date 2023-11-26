@@ -9,9 +9,9 @@
     "lint": "biome lint ./src ./test",
     "lint:fix": "pnpm run lint --fix",
     "test": "pnpm run \"/^test:.*/\"",
-    "test:node": "TEST_ENV=node vitest",
-    "test:browser": "TEST_ENV=happy-dom vitest",
-    "test:edge": "TEST_ENV=edge-runtime vitest"
+    "test:node": "vitest",
+    "test:browser": "vitest --config ./vitest-browser.config.ts",
+    "test:edge": "vitest --config ./vitest-edge.config.ts"
   },
   "keywords": [],
   "author": "",
