@@ -39,6 +39,20 @@ import { fromArray } from '@ilteoood/re-flusso/fromArray';
 ## APIs
 
 <details>
+<summary>accumulator</summary>
+
+```javascript
+import { accumulator } from '@ilteoood/re-flusso/accumulator';
+
+const chunkSize = 3;
+
+.pipeThrough(
+    accumulator(chunkSize)
+)
+```
+</details>
+
+<details>
 <summary>filter</summary>
 
 ```javascript
