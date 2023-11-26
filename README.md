@@ -107,6 +107,20 @@ await pipeline(
 </details>
 
 <details>
+<summary>skip</summary>
+
+```javascript
+import { skip } from '@ilteoood/re-flusso/skip';
+
+const itemsToSkip = 2;
+
+.pipeTo(
+    skip(itemsToSkip)
+)
+```
+</details>
+
+<details>
 <summary>toArray</summary>
 
 ```javascript
