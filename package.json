@@ -1,9 +1,20 @@
 {
   "name": "@ilteoood/re-flusso",
   "version": "0.0.1",
-  "description": "",
+  "description": "Utility library to operate with JavaScript Streams API",
   "main": "index.js",
   "type": "module",
+  "author": "Matteo Pietro Dazzi",
+  "homepage": "https://github.com/ilteoood/re-flusso",
+  "license": "MIT",
+  "exports": {
+    "./*": {
+      "import": {
+        "types": "./dist/src/*.d.ts",
+        "default": "./dist/src/*.js"
+      }
+    }
+  },
   "scripts": {
     "format": "biome format ./src ./test",
     "format:fix": "pnpm run format --fix",
@@ -15,9 +26,9 @@
     "test:browser": "vitest --config ./vitest-browser.config.ts",
     "test:edge": "vitest --config ./vitest-edge.config.ts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
+  "keywords": [
+    "streams"
+  ],
   "devDependencies": {
     "@biomejs/biome": "^1.3.3",
     "@edge-runtime/vm": "^3.1.7",
