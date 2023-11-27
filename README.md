@@ -12,6 +12,7 @@ It aims to support browsers, [Node.js](https://nodejs.org/) and [Edge Runtime](h
 
 <details>
 <summary>NPM</summary>
+
 ```bash
 npm install @ilteoood/re-flusso
 ```
@@ -19,6 +20,7 @@ npm install @ilteoood/re-flusso
 
 <details>
 <summary>PNPM</summary>
+
 ```bash
 pnpm install @ilteoood/re-flusso
 ```
