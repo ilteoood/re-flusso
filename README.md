@@ -121,6 +121,20 @@ import { map } from '@ilteoood/re-flusso/map';
 </details>
 
 <details>
+<summary>notEmpty</summary>
+
+```javascript
+import { notEmpty } from '@ilteoood/re-flusso/notEmpty';
+
+const errorToThrow = new Error('Stream is empty');
+
+.pipeThrough(
+    notEmpty(errorToThrow)
+)
+```
+</details>
+
+<details>
 <summary>pipeline</summary>
 
 ```javascript
