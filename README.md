@@ -67,6 +67,20 @@ import { filter } from '@ilteoood/re-flusso/filter';
 </details>
 
 <details>
+<summary>first</summary>
+
+```javascript
+import { first } from '@ilteoood/re-flusso/first';
+
+const firstItemsToKeep = 3;
+
+.pipeThrough(
+    first(firstItemsToKeep)
+)
+```
+</details>
+
+<details>
 <summary>fromIterable</summary>
 
 ```javascript
