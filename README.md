@@ -81,6 +81,20 @@ fromIterable(new Set([1, 2, 3]))
 </details>
 
 <details>
+<summary>last</summary>
+
+```javascript
+import { last } from '@ilteoood/re-flusso/last';
+
+const lastItemsToKeep = 3;
+
+.pipeThrough(
+    last(lastItemsToKeep)
+)
+```
+</details>
+
+<details>
 <summary>map</summary>
 
 ```javascript
