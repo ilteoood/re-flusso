@@ -19,12 +19,17 @@ describe("accumulator", () => {
 		expect(destinationArray).toEqual([[1], [2], [3]]);
 	});
 
-	it("should throw if parameter = 0", async () => {
-		expect(() => accumulator(0)).toThrow("chunkSize must be greater than 0");
-	});
+	it("should accumulate all items if parameter is < 0", async () => {
+		const sourceArray = [1, 2, 3];
+		const destinationArray = [];
 
-	it("should throw if parameter < 0", async () => {
-		expect(() => accumulator(-1)).toThrow("chunkSize must be greater than 0");
+		await pipeline(
+			fromIterable(sourceArray),
+			accumulator(-1),
+			toArray(destinationArray),
+		);
+
+		expect(destinationArray).toEqual([sourceArray]);
 	});
 
 	it("should work if chunkSize is bigger than source size", async () => {
