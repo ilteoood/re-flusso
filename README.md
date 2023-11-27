@@ -55,6 +55,20 @@ const chunkSize = 3;
 </details>
 
 <details>
+<summary>concat</summary>
+
+```javascript
+import { concat } from '@ilteoood/re-flusso/concat';
+
+concat(
+    fromIterable([1]),
+    fromIterable([2]),
+    fromIterable([3])
+)
+```
+</details>
+
+<details>
 <summary>filter</summary>
 
 ```javascript
