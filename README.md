@@ -121,6 +121,19 @@ fromIterable(new Set([1, 2, 3]))
 </details>
 
 <details>
+<summary>join</summary>
+
+```javascript
+import { join } from '@ilteoood/re-flusso/join';
+
+.pipeThrough(
+    join('-')
+)
+
+```
+</details>
+
+<details>
 <summary>last</summary>
 
 ```javascript
