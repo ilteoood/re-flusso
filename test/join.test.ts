@@ -38,4 +38,20 @@ describe("join", () => {
 			"[object Object]-[object Object]-[object Object]",
 		]);
 	});
+
+	test("should not throw with arrays", async () => {
+		const destinationArray = [];
+
+		await pipeline(
+			fromIterable([
+				[1, 2],
+				[3, 4],
+				[5, 6],
+			]),
+			join("-"),
+			toArray(destinationArray),
+		);
+
+		expect(destinationArray).toEqual(["1,2-3,4-5,6"]);
+	});
 });
