@@ -69,6 +69,18 @@ concat(
 </details>
 
 <details>
+<summary>fetchText</summary>
+
+```javascript
+import { fetchText } from '@ilteoood/re-flusso/fetchText';
+
+const response = await fetch('...')
+
+fetchText(response)
+```
+</details>
+
+<details>
 <summary>filter</summary>
 
 ```javascript
