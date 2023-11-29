@@ -147,6 +147,30 @@ import { map } from '@ilteoood/re-flusso/map';
 </details>
 
 <details>
+<summary>ndJsonParser</summary>
+
+```javascript
+import { ndJsonParser } from '@ilteoood/re-flusso/ndjson';
+
+.pipeThrough(
+    ndJsonParser()
+)
+```
+</details>
+
+<details>
+<summary>ndJsonStringer</summary>
+
+```javascript
+import { ndJsonStringer } from '@ilteoood/re-flusso/ndjson';
+
+.pipeThrough(
+    ndJsonStringer()
+)
+```
+</details>
+
+<details>
 <summary>notEmpty</summary>
 
 ```javascript
