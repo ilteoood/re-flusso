@@ -43,14 +43,16 @@ describe("join", () => {
 		const destinationArray = [];
 
 		await pipeline(
-			fromIterable([{ a: 1, toString: () => "a1" }, { a: 2, toString: () => "a2" }, { a: 3, toString: () => "a3" }]),
+			fromIterable([
+				{ a: 1, toString: () => "a1" },
+				{ a: 2, toString: () => "a2" },
+				{ a: 3, toString: () => "a3" },
+			]),
 			join("-"),
 			toArray(destinationArray),
 		);
 
-		expect(destinationArray).toEqual([
-			"a1-a2-a3",
-		]);
+		expect(destinationArray).toEqual(["a1-a2-a3"]);
 	});
 
 	test("should not throw with arrays", async () => {

@@ -126,8 +126,10 @@ fromIterable(new Set([1, 2, 3]))
 ```javascript
 import { join } from '@ilteoood/re-flusso/join';
 
+const separator = ',';
+
 .pipeThrough(
-    join('-')
+    join(separator)
 )
 
 ```
@@ -223,6 +225,20 @@ const itemsToSkip = 2;
 
 .pipeTo(
     skip(itemsToSkip)
+)
+```
+</details>
+
+<details>
+<summary>split</summary>
+
+```javascript
+import { split } from '@ilteoood/re-flusso/split';
+
+const separator = ',';
+
+.pipeTo(
+    split(separator)
 )
 ```
 </details>
