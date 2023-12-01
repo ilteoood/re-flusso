@@ -11,7 +11,7 @@ describe("split", () => {
 
 		await pipeline(fromIterable(["1,2,3"]), split(), toArray(destinationArray));
 
-		expect(destinationArray).toEqual([["1", "2", "3"]]);
+		expect(destinationArray).toEqual(["1", "2", "3"]);
 	});
 
 	test("should split strings with custom separator", async () => {
@@ -23,6 +23,6 @@ describe("split", () => {
 			toArray(destinationArray),
 		);
 
-		expect(destinationArray).toEqual([["1", "2", "3"]]);
+		expect(destinationArray).toEqual(["1", "2", "3"]);
 	});
 });

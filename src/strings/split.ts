@@ -3,10 +3,12 @@ export const split = <T>(
 	writableStrategy?: QueuingStrategy,
 	readableStrategy?: QueuingStrategy,
 ) => {
-	return new TransformStream<string, string[]>(
+	return new TransformStream<string, string>(
 		{
 			transform(chunk, controller) {
-				controller.enqueue(chunk.split(separator));
+				for (const item of chunk.split(separator)) {
+					controller.enqueue(item);
+				}
 			},
 		},
 		writableStrategy,
