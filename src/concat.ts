@@ -1,24 +1,22 @@
 export const concat = (...readableStreams: ReadableStream[]) => {
 	const fallbackedStreams = readableStreams ?? [];
-	const readableStreamsLength = fallbackedStreams.length;
+	let currentReaderIndex = 0;
+	let currentReader = fallbackedStreams[currentReaderIndex]?.getReader();
 
 	return new ReadableStream({
-		async start(controller) {
-			for (let i = 0; i < readableStreamsLength; i++) {
-				const reader = fallbackedStreams[i].getReader();
-
-				while (true) {
-					const readResult = await reader.read();
-
-					if (readResult.done) {
-						break;
-					}
-
-					controller.enqueue(readResult.value);
-				}
+		async pull(controller) {
+			if (!currentReader) {
+				controller.close();
+				return;
 			}
 
-			controller.close();
+			const readResult = await currentReader.read();
+
+			if (readResult.done) {
+				currentReader = fallbackedStreams[++currentReaderIndex]?.getReader();
+			} else {
+				controller.enqueue(readResult.value);
+			}
 		},
 	});
 };
