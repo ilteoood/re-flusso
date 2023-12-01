@@ -124,7 +124,7 @@ fromIterable(new Set([1, 2, 3]))
 <summary>join</summary>
 
 ```javascript
-import { join } from '@ilteoood/re-flusso/join';
+import { join } from '@ilteoood/re-flusso/strings/join';
 
 const separator = ',';
 
@@ -157,6 +157,20 @@ import { map } from '@ilteoood/re-flusso/map';
 
 .pipeThrough(
     map((value, index) => value + index)   
+)
+```
+</details>
+
+<details>
+<summary>merge</summary>
+
+```javascript
+import { merge } from '@ilteoood/re-flusso/merge';
+
+merge(
+    fromIterable([1]),
+    fromIterable([2]),
+    fromIterable([3])
 )
 ```
 </details>
@@ -233,7 +247,7 @@ const itemsToSkip = 2;
 <summary>split</summary>
 
 ```javascript
-import { split } from '@ilteoood/re-flusso/split';
+import { split } from '@ilteoood/re-flusso/strings/split';
 
 const separator = ',';
 
