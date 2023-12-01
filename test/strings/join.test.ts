@@ -1,8 +1,8 @@
 import { describe, expect, test } from "vitest";
-import { fromIterable } from "../src/fromIterable";
-import { join } from "../src/join";
-import { pipeline } from "../src/pipeline";
-import { toArray } from "../src/toArray";
+import { fromIterable } from "../../src/fromIterable";
+import { join } from "../../src/strings/join";
+import { pipeline } from "../../src/pipeline";
+import { toArray } from "../../src/toArray";
 
 describe("join", () => {
 	test("should join strings", async () => {

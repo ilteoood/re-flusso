@@ -1,9 +1,7 @@
-import { readdirSync } from 'fs';
+import { globSync } from 'glob';
 import { defineConfig } from 'tsup';
 
-const tsFiles = readdirSync('./src')
-    .filter(file => file.endsWith('.ts'))
-    .map(file => `./src/${file}`)
+const tsFiles = globSync('./src/**/*.ts')
 
 export default defineConfig({
     entry: tsFiles,

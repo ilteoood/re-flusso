@@ -1,9 +1,9 @@
 import { describe, expect, test } from "vitest";
 
-import { fromIterable } from "../src/fromIterable";
-import { pipeline } from "../src/pipeline";
-import { split } from "../src/split";
-import { toArray } from "../src/toArray";
+import { fromIterable } from "../../src/fromIterable";
+import { pipeline } from "../../src/pipeline";
+import { split } from "../../src/strings/split";
+import { toArray } from "../../src/toArray";
 
 describe("split", () => {
 	test("should split strings", async () => {
