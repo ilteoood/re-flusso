@@ -7,9 +7,11 @@ import { toArray } from "../src/toArray";
 
 describe("notEmpty", () => {
 	test("should not throw error if stream is not empty", async () => {
-		expect(
-			pipeline(fromIterable([1]), notEmpty(), toArray([])),
-		).resolves.toBeUndefined();
+		const destinationArray = [];
+
+		await pipeline(fromIterable([1]), notEmpty(), toArray(destinationArray));
+
+		expect(destinationArray).toEqual([1]);
 	});
 
 	test("should throw error if stream is empty", async () => {
