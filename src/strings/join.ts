@@ -1,15 +1,12 @@
-const joinNewItem =
-	(separator: string) =>
-	<T>(chunk: T) =>
-		`${separator}${chunk}`;
-
 export const join = (
 	separator = ",",
 	writableStrategy?: QueuingStrategy,
 	readableStrategy?: QueuingStrategy,
 ) => {
+	const joinNewItem = <T>(chunk: T) => `${separator}${chunk}`;
+
 	let joinChunk = (chunk: string) => {
-		joinChunk = joinNewItem(separator);
+		joinChunk = joinNewItem;
 		return chunk;
 	};
 
