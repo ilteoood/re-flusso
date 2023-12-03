@@ -5,7 +5,7 @@ const identityTransform = <T>(
 	controller.enqueue(chunk);
 };
 
-export const notEmpty = (
+export const notEmpty = <T>(
 	error: Error = new Error("Stream is empty"),
 	writableStrategy?: QueuingStrategy,
 	readableStrategy?: QueuingStrategy,
@@ -23,7 +23,7 @@ export const notEmpty = (
 		transform = identityTransform;
 	};
 
-	return new TransformStream(
+	return new TransformStream<T, T>(
 		{
 			transform,
 			flush() {
