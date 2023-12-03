@@ -176,25 +176,25 @@ merge(
 </details>
 
 <details>
-<summary>ndJsonParser</summary>
+<summary>parser</summary>
 
 ```javascript
-import { ndJsonParser } from '@ilteoood/re-flusso/ndjson';
+import { parser } from '@ilteoood/re-flusso/ndjson/parser';
 
 .pipeThrough(
-    ndJsonParser()
+    parser()
 )
 ```
 </details>
 
 <details>
-<summary>ndJsonStringer</summary>
+<summary>stringifier</summary>
 
 ```javascript
-import { ndJsonStringer } from '@ilteoood/re-flusso/ndjson';
+import { stringifier } from '@ilteoood/re-flusso/ndjson/stringifier';
 
 .pipeThrough(
-    ndJsonStringer()
+    stringifier()
 )
 ```
 </details>
