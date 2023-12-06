@@ -121,21 +121,6 @@ fromIterable(new Set([1, 2, 3]))
 </details>
 
 <details>
-<summary>join</summary>
-
-```javascript
-import { join } from '@ilteoood/re-flusso/strings/join';
-
-const separator = ',';
-
-.pipeThrough(
-    join(separator)
-)
-
-```
-</details>
-
-<details>
 <summary>last</summary>
 
 ```javascript
@@ -176,27 +161,31 @@ merge(
 </details>
 
 <details>
+<summary>NDJSON</summary>
+
+<details>
 <summary>parser</summary>
 
 ```javascript
-import { parser } from '@ilteoood/re-flusso/ndjson/parser';
+import { parser } from '@ilteoood/re-flusso/ndJson/parser';
 
 .pipeThrough(
     parser()
 )
 ```
 </details>
-
 <details>
 <summary>stringifier</summary>
 
 ```javascript
-import { stringifier } from '@ilteoood/re-flusso/ndjson/stringifier';
+import { stringifier } from '@ilteoood/re-flusso/ndJson/stringifier';
 
 .pipeThrough(
     stringifier()
 )
 ```
+</details>
+</details>
 </details>
 
 <details>
@@ -244,6 +233,24 @@ const itemsToSkip = 2;
 </details>
 
 <details>
+<summary>strings</summary>
+
+<details>
+<summary>join</summary>
+
+```javascript
+import { join } from '@ilteoood/re-flusso/strings/join';
+
+const separator = ',';
+
+.pipeThrough(
+    join(separator)
+)
+
+```
+</details>
+
+<details>
 <summary>split</summary>
 
 ```javascript
@@ -255,6 +262,8 @@ const separator = ',';
     split(separator)
 )
 ```
+</details>
+
 </details>
 
 <details>
