@@ -1,32 +1,23 @@
-const recursivePromiseBuilder = <T>(
-	reader: ReadableStreamDefaultReader<T>,
-	controller: ReadableStreamDefaultController<T>,
-) => {
-	const recursivePromise = async () => {
-		const readResult = await reader.read();
+const readData = <T>(reader: ReadableStreamDefaultReader<T>) => reader.read();
 
-		if (!readResult.done) {
-			controller.enqueue(readResult.value);
-
-			return recursivePromise();
-		}
-	};
-
-	return recursivePromise();
-};
+const isStreamNotDone = <T>(result: ReadableStreamReadResult<T>) => !result.done;
 
 export const merge = <T>(...readableStreams: ReadableStream<T>[]) => {
-	const fallbackedStreams = readableStreams ?? [];
+	const readers = (readableStreams ?? []).map((stream) => stream.getReader());
 
 	return new ReadableStream<T>({
 		async pull(controller) {
-			await Promise.all(
-				fallbackedStreams.map((stream) =>
-					recursivePromiseBuilder(stream.getReader(), controller),
-				),
+			const resultsWithData = (await Promise.all(readers.map(readData))).filter(
+				isStreamNotDone,
 			);
 
-			controller.close();
+			if (resultsWithData.length === 0) {
+				controller.close();
+			} else {
+				for (const item of resultsWithData) {
+					controller.enqueue(item.value);
+				}
+			}
 		},
 	});
 };

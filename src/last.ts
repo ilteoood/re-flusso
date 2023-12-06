@@ -16,10 +16,8 @@ export const last = <T>(
 			},
 
 			flush(controller) {
-				const itemsLength = lastItems.length;
-
-				for (let i = 0; i < itemsLength; i++) {
-					controller.enqueue(lastItems[i]);
+				for (const item of lastItems) {
+					controller.enqueue(item);
 				}
 			},
 		},
