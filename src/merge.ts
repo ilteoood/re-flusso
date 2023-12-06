@@ -1,6 +1,7 @@
 const readData = <T>(reader: ReadableStreamDefaultReader<T>) => reader.read();
 
-const isStreamNotDone = <T>(result: ReadableStreamReadResult<T>) => !result.done;
+const isStreamNotDone = <T>(result: ReadableStreamReadResult<T>) =>
+	!result.done;
 
 export const merge = <T>(...readableStreams: ReadableStream<T>[]) => {
 	const readers = (readableStreams ?? []).map((stream) => stream.getReader());
