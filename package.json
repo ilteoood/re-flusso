@@ -32,12 +32,12 @@
     "streams"
   ],
   "devDependencies": {
-    "@biomejs/biome": "^1.4.0",
+    "@biomejs/biome": "^1.4.1",
     "@edge-runtime/vm": "^3.1.7",
     "glob": "^10.3.10",
     "happy-dom": "^12.10.3",
     "tsup": "^8.0.1",
     "typescript": "^5.3.2",
-    "vitest": "^0.34.6"
+    "vitest": "^1.0.1"
   }
 }

@@ -10,11 +10,11 @@ describe("concat", () => {
 		const destinationArray = [];
 
 		await pipeline(
-			concat(fromIterable([1]), fromIterable([2]), fromIterable([3])),
+			concat(fromIterable([1, 4]), fromIterable([2, 5]), fromIterable([3, 6])),
 			toArray(destinationArray),
 		);
 
-		expect(destinationArray).toEqual([1, 2, 3]);
+		expect(destinationArray).toEqual([1, 4, 2, 5, 3, 6]);
 	});
 
 	test("should concat streams even if first stream is empty", async () => {
