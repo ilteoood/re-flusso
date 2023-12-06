@@ -164,7 +164,7 @@ merge(
 <summary>NDJSON</summary>
 
 <details>
-<summary>parser</summary>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;parser</summary>
 
 ```javascript
 import { parser } from '@ilteoood/re-flusso/ndJson/parser';
@@ -175,7 +175,7 @@ import { parser } from '@ilteoood/re-flusso/ndJson/parser';
 ```
 </details>
 <details>
-<summary>stringifier</summary>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;stringifier</summary>
 
 ```javascript
 import { stringifier } from '@ilteoood/re-flusso/ndJson/stringifier';
@@ -236,7 +236,7 @@ const itemsToSkip = 2;
 <summary>strings</summary>
 
 <details>
-<summary>join</summary>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;join</summary>
 
 ```javascript
 import { join } from '@ilteoood/re-flusso/strings/join';
@@ -251,7 +251,7 @@ const separator = ',';
 </details>
 
 <details>
-<summary>split</summary>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;split</summary>
 
 ```javascript
 import { split } from '@ilteoood/re-flusso/strings/split';
