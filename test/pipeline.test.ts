@@ -79,11 +79,19 @@ describe("pipeline", () => {
 		const destinationArrayTimes3 = [];
 
 		await Promise.all([
-			pipeline(source1, map((value) => value * 2), toArray(destinationArrayTimes2)),
-			pipeline(source2, map((value) => value * 3), toArray(destinationArrayTimes3)),
-		])
+			pipeline(
+				source1,
+				map((value) => value * 2),
+				toArray(destinationArrayTimes2),
+			),
+			pipeline(
+				source2,
+				map((value) => value * 3),
+				toArray(destinationArrayTimes3),
+			),
+		]);
 
 		expect(destinationArrayTimes2).toEqual([2, 4, 6]);
 		expect(destinationArrayTimes3).toEqual([3, 6, 9]);
-	})
+	});
 });

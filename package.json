@@ -26,7 +26,8 @@
     "test:node": "vitest",
     "test:browser": "vitest --config ./vitest-browser.config.ts",
     "test:edge": "vitest --config ./vitest-edge.config.ts",
-    "build": "tsup"
+    "build": "tsup",
+    "prepublish": "pnpm run build"
   },
   "keywords": [
     "streams"
