@@ -1,41 +1,50 @@
-import { fetchText } from '@ilteoood/re-flusso/fetchText'
-import { filter } from '@ilteoood/re-flusso/filter'
-import { map } from '@ilteoood/re-flusso/map'
-import { parser } from '@ilteoood/re-flusso/ndJson/parser'
-import { pipeline } from '@ilteoood/re-flusso/pipeline'
+import PersonWorker from './worker?worker'
 
-interface User {
-  name: string
-  surname: string
-  age: number
+type PersonKind = 'adult' | 'child'
+
+interface WorkerMessage {
+  kind: PersonKind
+  textContent: string
 }
 
-const adultContainer = document.querySelector<HTMLUListElement>('#adultList') as HTMLUListElement
-const childContainer = document.querySelector<HTMLUListElement>('#childList') as HTMLUListElement
-
-const response = await fetch('/users')
-
-const [response1, response2] = fetchText(response).tee()
-
-const appendElement = (container: HTMLUListElement) => (user: User) => {
-  const li = document.createElement('li')
-  li.textContent = `${user.name} ${user.surname} - ${user.age}`
-  container.appendChild(li)
+const containers = {
+  adult: document.querySelector<HTMLUListElement>('#adultList') as HTMLUListElement,
+  child: document.querySelector<HTMLUListElement>('#childList') as HTMLUListElement
 }
 
-await Promise.all([
-  pipeline(
-    response1,
-    parser(),
-    filter(user => user.age >= 18),
-    map(user => user.name),
-    new WritableStream({ write: appendElement(adultContainer) })
-  ),
-  pipeline(
-    response2,
-    parser(),
-    filter(user => user.age < 18),
-    map(user => user.name),
-    new WritableStream({ write: appendElement(childContainer) })
-  )
-])
+const people: Record<PersonKind, string[]> = {
+  adult: [],
+  child: []
+}
+
+const worker = new PersonWorker()
+
+
+worker.onmessage = ({ data: { kind, textContent } }: MessageEvent<WorkerMessage>) => {
+  people[kind].push(textContent)
+}
+
+const appendElement = (kind: PersonKind) => {
+  if (people[kind].length > 0) {
+    const fragment = document.createDocumentFragment()
+
+    for (const person of people[kind]) {
+      const li = document.createElement('li')
+      li.textContent = person
+      fragment.append(li)
+    }
+
+    people[kind] = []
+    containers[kind].append(fragment)
+  }
+}
+
+const resursiveAnimationFrame = () => {
+  window.requestAnimationFrame(() => {
+    appendElement('adult')
+    appendElement('child')
+    resursiveAnimationFrame()
+  })
+}
+
+setTimeout(resursiveAnimationFrame, 1000)
