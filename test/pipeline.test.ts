@@ -70,4 +70,20 @@ describe("pipeline", () => {
 
 		expect(destinationArray).toEqual([2, 4, 6]);
 	});
+
+	test("can consume the tee readable stream multiple times", async () => {
+		const sourceStream = fromIterable([1, 2, 3]);
+		const [source1, source2] = sourceStream.tee();
+
+		const destinationArrayTimes2 = [];
+		const destinationArrayTimes3 = [];
+
+		await Promise.all([
+			pipeline(source1, map((value) => value * 2), toArray(destinationArrayTimes2)),
+			pipeline(source2, map((value) => value * 3), toArray(destinationArrayTimes3)),
+		])
+
+		expect(destinationArrayTimes2).toEqual([2, 4, 6]);
+		expect(destinationArrayTimes3).toEqual([3, 6, 9]);
+	})
 });
