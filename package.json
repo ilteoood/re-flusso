@@ -17,11 +17,11 @@
     "dist"
   ],
   "scripts": {
-    "format": "biome format ./src ./test",
+    "format": "biome format ./src ./test ./examples",
     "format:fix": "pnpm run format --write",
-    "sort": "biome check --apply-unsafe ./src ./test",
-    "lint": "biome lint ./src ./test",
-    "lint:fix": "biome check --apply ./src ./test",
+    "sort": "biome check --apply-unsafe ./src ./test ./examples",
+    "lint": "biome lint ./src ./test ./examples",
+    "lint:fix": "biome check --apply ./src ./test ./examples",
     "test": "pnpm run \"/^test:.*/\"",
     "test:node": "vitest",
     "test:browser": "vitest --config ./vitest-browser.config.ts",

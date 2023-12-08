@@ -1,50 +1,61 @@
-import PersonWorker from './worker?worker'
+import { fetchText } from "@ilteoood/re-flusso/fetchText";
+import { filter } from "@ilteoood/re-flusso/filter";
+import { map } from "@ilteoood/re-flusso/map";
+import { parse } from "@ilteoood/re-flusso/ndJson/parse";
+import { pipeline } from "@ilteoood/re-flusso/pipeline";
+import { reduce } from "@ilteoood/re-flusso/reduce";
 
-type PersonKind = 'adult' | 'child'
-
-interface WorkerMessage {
-  kind: PersonKind
-  textContent: string
+interface User {
+	name: string;
+	surname: string;
+	age: number;
 }
+
+interface ReducedUser {
+	people: number;
+	ages: number;
+}
+
+const response = await fetch("/users");
+const [response1, response2] = fetchText(response).tee();
 
 const containers = {
-  adult: document.querySelector<HTMLUListElement>('#adultList') as HTMLUListElement,
-  child: document.querySelector<HTMLUListElement>('#childList') as HTMLUListElement
-}
+	adult: document.querySelector<HTMLUListElement>(
+		"#adultList",
+	) as HTMLUListElement,
+	child: document.querySelector<HTMLUListElement>(
+		"#childList",
+	) as HTMLUListElement,
+};
 
-const people: Record<PersonKind, string[]> = {
-  adult: [],
-  child: []
-}
+const calculateMean = (reducedUser: ReducedUser) =>
+	reducedUser.ages / reducedUser.people || 0;
 
-const worker = new PersonWorker()
+const ageReducer = (acc: ReducedUser, user: User) => {
+	acc.people++;
+	acc.ages += user.age;
+	return acc;
+};
 
+const writeContent = (kind: "adult" | "child") => (mean: number) => {
+	containers[kind].textContent = `The mean age for ${kind} is ${mean}`;
+};
 
-worker.onmessage = ({ data: { kind, textContent } }: MessageEvent<WorkerMessage>) => {
-  people[kind].push(textContent)
-}
-
-const appendElement = (kind: PersonKind) => {
-  if (people[kind].length > 0) {
-    const fragment = document.createDocumentFragment()
-
-    for (const person of people[kind]) {
-      const li = document.createElement('li')
-      li.textContent = person
-      fragment.append(li)
-    }
-
-    people[kind] = []
-    containers[kind].append(fragment)
-  }
-}
-
-const resursiveAnimationFrame = () => {
-  window.requestAnimationFrame(() => {
-    appendElement('adult')
-    appendElement('child')
-    resursiveAnimationFrame()
-  })
-}
-
-setTimeout(resursiveAnimationFrame, 1000)
+await Promise.all([
+	pipeline(
+		response1,
+		parse(),
+		filter((user) => user.age >= 18),
+		reduce(ageReducer, { people: 0, ages: 0 }),
+		map(calculateMean),
+		new WritableStream({ write: writeContent("adult") }),
+	),
+	pipeline(
+		response2,
+		parse(),
+		filter((user) => user.age < 18),
+		reduce(ageReducer, { people: 0, ages: 0 }),
+		map(calculateMean),
+		new WritableStream({ write: writeContent("child") }),
+	),
+]);
