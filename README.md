@@ -219,6 +219,22 @@ await pipeline(
 </details>
 
 <details>
+<summary>reduce</summary>
+
+```javascript
+import { reduce } from '@ilteoood/re-flusso/reduce';
+
+const destinationArray = [];
+
+await reduce(
+    fromIterable([1, 2, 3]),
+    reduce((accumulator, value) => accumulator + value, 0),
+    toArray(destinationArray),
+);
+```
+</details>
+
+<details>
 <summary>skip</summary>
 
 ```javascript
