@@ -1,0 +1,17 @@
+{
+  "name": "fastify",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch ./src/index.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^4.24.3",
+    "@faker-js/faker": "^8.3.1",
+    "@ilteoood/re-flusso": "workspace:^"
+  }
+}
