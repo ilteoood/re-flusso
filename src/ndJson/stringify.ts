@@ -1,7 +1,7 @@
 const stringifyNewLine = <T>(chunk: T) => `\n${JSON.stringify(chunk)}`;
 const stringifyFirstLine = <T>(chunk: T) => JSON.stringify(chunk);
 
-export const stringifier = <T>(
+export const stringify = <T>(
 	writableStrategy?: QueuingStrategy,
 	readableStrategy?: QueuingStrategy,
 ) => {
