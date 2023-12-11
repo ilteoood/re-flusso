@@ -1,10 +1,3 @@
-const identityTransform = <T>(
-	chunk: T,
-	controller: TransformStreamDefaultController<T>,
-) => {
-	controller.enqueue(chunk);
-};
-
 export const notEmpty = <T>(
 	error: Error = new Error("Stream is empty"),
 	writableStrategy?: QueuingStrategy,
@@ -12,20 +5,12 @@ export const notEmpty = <T>(
 ) => {
 	let isEmpty = true;
 
-	let transform = (
-		chunk: T,
-		controller: TransformStreamDefaultController<T>,
-	) => {
-		isEmpty = false;
-
-		controller.enqueue(chunk);
-
-		transform = identityTransform;
-	};
-
 	return new TransformStream<T, T>(
 		{
-			transform,
+			transform(chunk, controller) {
+				isEmpty = false;
+				controller.enqueue(chunk);
+			},
 			flush() {
 				if (isEmpty) {
 					throw error;
