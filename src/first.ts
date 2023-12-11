@@ -11,6 +11,8 @@ export const first = <T>(
 				if (itemsSent < firstItemsToKeep) {
 					itemsSent++;
 					controller.enqueue(chunk);
+				} else {
+					controller.terminate();
 				}
 			},
 		},
