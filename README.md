@@ -175,13 +175,13 @@ import { parser } from '@ilteoood/re-flusso/ndJson/parser';
 ```
 </details>
 <details>
-<summary>&nbsp;&nbsp;&nbsp;&nbsp;stringifier</summary>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;stringify</summary>
 
 ```javascript
-import { stringifier } from '@ilteoood/re-flusso/ndJson/stringifier';
+import { stringify } from '@ilteoood/re-flusso/ndJson/stringify';
 
 .pipeThrough(
-    stringifier()
+    stringify()
 )
 ```
 </details>

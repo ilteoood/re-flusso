@@ -1,13 +1,20 @@
-const stringifyNewLine = <T>(chunk: T) => `\n${JSON.stringify(chunk)}`;
-const stringifyFirstLine = <T>(chunk: T) => JSON.stringify(chunk);
+type Stringifier<T> = (chunk: T) => string;
+
+const stringifyNewLine =
+	<T>(stringifier: Stringifier<T>) =>
+	(chunk: T) =>
+		`\n${stringifier(chunk)}`;
+const stringifyFirstLine = <T>(stringifier: Stringifier<T>, chunk: T) =>
+	stringifier(chunk);
 
 export const stringify = <T>(
+	stringifier: Stringifier<T> = JSON.stringify,
 	writableStrategy?: QueuingStrategy,
 	readableStrategy?: QueuingStrategy,
 ) => {
 	let enqueue = (chunk: T) => {
-		const result = stringifyFirstLine(chunk);
-		enqueue = stringifyNewLine;
+		const result = stringifyFirstLine(stringifier, chunk);
+		enqueue = stringifyNewLine(stringifier);
 		return result;
 	};
 
