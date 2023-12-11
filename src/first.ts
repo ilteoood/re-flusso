@@ -8,8 +8,7 @@ export const first = <T>(
 	return new TransformStream<T, T>(
 		{
 			transform(chunk, controller) {
-				if (itemsSent < firstItemsToKeep) {
-					itemsSent++;
+				if (itemsSent++ < firstItemsToKeep) {
 					controller.enqueue(chunk);
 				} else {
 					controller.terminate();
