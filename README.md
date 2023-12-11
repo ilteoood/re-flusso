@@ -69,14 +69,14 @@ concat(
 </details>
 
 <details>
-<summary>fetchText</summary>
+<summary>text</summary>
 
 ```javascript
-import { fetchText } from '@ilteoood/re-flusso/fetchText';
+import { text } from '@ilteoood/re-flusso/fetch/text';
 
 const response = await fetch('...')
 
-fetchText(response)
+text(response)
 ```
 </details>
 

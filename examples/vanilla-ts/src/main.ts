@@ -1,4 +1,4 @@
-import { fetchText } from "@ilteoood/re-flusso/fetchText";
+import { text } from "@ilteoood/re-flusso/fetch/text";
 import { filter } from "@ilteoood/re-flusso/filter";
 import { map } from "@ilteoood/re-flusso/map";
 import { parse } from "@ilteoood/re-flusso/ndJson/parse";
@@ -17,7 +17,7 @@ interface ReducedUser {
 }
 
 const response = await fetch("/users");
-const [response1, response2] = fetchText(response).tee();
+const [response1, response2] = text(response).tee();
 
 const containers = {
 	adult: document.querySelector<HTMLUListElement>(

@@ -1,4 +1,4 @@
-export const fetchText = (
+export const text = (
 	response: Response,
 	label?: string,
 	options?: TextDecoderOptions,
