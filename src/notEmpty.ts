@@ -12,7 +12,7 @@ export const notEmpty = <T>(
 ) => {
 	let isEmpty = true;
 
-	let transform = <T>(
+	let transform = (
 		chunk: T,
 		controller: TransformStreamDefaultController<T>,
 	) => {
