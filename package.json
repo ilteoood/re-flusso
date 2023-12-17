@@ -1,6 +1,6 @@
 {
   "name": "@ilteoood/re-flusso",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Utility library to operate with JavaScript Streams API",
   "type": "module",
   "author": "Matteo Pietro Dazzi",
