@@ -30,7 +30,12 @@
     "prepublish": "pnpm run build"
   },
   "keywords": [
-    "streams"
+    "streams",
+    "utils",
+    "browser",
+    "nodejs",
+    "edge",
+    "dependency free"
   ],
   "devDependencies": {
     "@biomejs/biome": "^1.4.1",

@@ -8,8 +8,6 @@ It aims to support browsers, [Node.js](https://nodejs.org/) and [Edge Runtime](h
 
 ## Installation
 
-**Note: the package is not published on NPM yet**
-
 <details>
 <summary>NPM</summary>
 
