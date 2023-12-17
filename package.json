@@ -16,6 +16,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "format": "biome format ./src ./test ./examples",
     "format:fix": "pnpm run format --write",
