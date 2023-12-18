@@ -224,7 +224,7 @@ import { reduce } from '@ilteoood/re-flusso/reduce';
 
 const destinationArray = [];
 
-await reduce(
+await pipeline(
     fromIterable([1, 2, 3]),
     reduce((accumulator, value) => accumulator + value, 0),
     toArray(destinationArray),
