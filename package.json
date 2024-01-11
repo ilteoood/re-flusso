@@ -41,13 +41,13 @@
     "dependency free"
   ],
   "devDependencies": {
-    "@biomejs/biome": "^1.4.1",
+    "@biomejs/biome": "^1.5.1",
     "@edge-runtime/vm": "^3.1.7",
-    "fast-json-stringify": "^5.9.1",
+    "fast-json-stringify": "^5.10.0",
     "glob": "^10.3.10",
-    "happy-dom": "^12.10.3",
+    "happy-dom": "^13.0.0",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3",
-    "vitest": "^1.0.4"
+    "vitest": "^1.1.3"
   }
 }

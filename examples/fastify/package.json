@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^4.25.1",
+    "fastify": "^4.25.2",
     "@faker-js/faker": "^8.3.1",
     "@ilteoood/re-flusso": "workspace:^"
   }
