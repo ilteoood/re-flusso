@@ -42,4 +42,9 @@ describe("fromIterable", () => {
 			"sourceIterable is not iterable",
 		);
 	});
+
+	it("should throw if parameter is iterable", () => {
+		// @ts-expect-error undefined parameter for test
+		expect(() => fromIterable(1)).toThrow("sourceIterable is not iterable");
+	});
 });
