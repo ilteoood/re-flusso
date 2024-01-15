@@ -278,6 +278,32 @@ const separator = ',';
 ```
 </details>
 
+<details>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;toLowerCase</summary>
+
+```javascript
+import { toLowerCase } from '@ilteoood/re-flusso/strings/toLowerCase';
+
+.pipeThrough(
+    toLowerCase(separator)
+)
+
+```
+</details>
+
+<details>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;toUpperCase</summary>
+
+```javascript
+import { toUpperCase } from '@ilteoood/re-flusso/strings/toUpperCase';
+
+.pipeThrough(
+    toUpperCase(separator)
+)
+
+```
+</details>
+
 </details>
 
 <details>
