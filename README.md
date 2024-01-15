@@ -201,6 +201,21 @@ const errorToThrow = new Error('Stream is empty');
 </details>
 
 <details>
+<summary>numbers</summary>
+
+<details>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;fromRange</summary>
+
+```javascript
+import { fromRange } from '@ilteoood/re-flusso/numbers/fromRange';
+
+fromRange(1, 3)
+```
+</details>
+</details>
+</details>
+
+<details>
 <summary>pipeline</summary>
 
 ```javascript
