@@ -38,7 +38,8 @@
     "browser",
     "nodejs",
     "edge",
-    "dependency free"
+    "dependency free",
+    "whatwg"
   ],
   "devDependencies": {
     "@biomejs/biome": "^1.5.2",

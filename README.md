@@ -248,6 +248,16 @@ await pipeline(
 </details>
 
 <details>
+<summary>repeat</summary>
+
+```javascript
+import { repeat } from '@ilteoood/re-flusso/repeat';
+
+repeat('1', 3)
+```
+</details>
+
+<details>
 <summary>skip</summary>
 
 ```javascript
