@@ -12,6 +12,14 @@ describe("fromRange", () => {
 		expect(destinationArray).toEqual([1, 2, 3]);
 	});
 
+	test("should generate range for negative numbers", async () => {
+		const destinationArray = [];
+
+		await pipeline(fromRange(-1, 3), toArray(destinationArray));
+
+		expect(destinationArray).toEqual([-1, 0, 1, 2, 3]);
+	});
+
 	test("should generate empty range when min > max", async () => {
 		const destinationArray = [];
 
