@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@biomejs/biome':
-        specifier: ^1.5.1
-        version: 1.5.1
+        specifier: ^1.5.2
+        version: 1.5.2
       '@edge-runtime/vm':
         specifier: ^3.1.7
         version: 3.1.7
@@ -21,8 +21,8 @@ importers:
         specifier: ^10.3.10
         version: 10.3.10
       happy-dom:
-        specifier: ^13.0.0
-        version: 13.0.0
+        specifier: ^13.1.4
+        version: 13.1.4
       tsup:
         specifier: ^8.0.1
         version: 8.0.1(typescript@5.3.3)
@@ -30,8 +30,8 @@ importers:
         specifier: ^5.3.3
         version: 5.3.3
       vitest:
-        specifier: ^1.1.3
-        version: 1.1.3(@edge-runtime/vm@3.1.7)(happy-dom@13.0.0)
+        specifier: ^1.2.0
+        version: 1.2.0(@edge-runtime/vm@3.1.7)(happy-dom@13.1.4)
 
   examples/fastify:
     dependencies:
@@ -60,24 +60,24 @@ importers:
 
 packages:
 
-  /@biomejs/biome@1.5.1:
-    resolution: {integrity: sha512-rdMA/N1Zc1nxUtbXMVr+50Sg/Pezz+9qGQa2uyRWFtrCoyr3dv0pVz+0ifGGue18ip50ZH8x2r5CV7zo8Q/0mA==}
+  /@biomejs/biome@1.5.2:
+    resolution: {integrity: sha512-LhycxGQBQLmfv6M3e4tMfn/XKcUWyduDYOlCEBrHXJ2mMth2qzYt1JWypkWp+XmU/7Hl2dKvrP4mZ5W44+nWZw==}
     engines: {node: '>=14.*'}
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      '@biomejs/cli-darwin-arm64': 1.5.1
-      '@biomejs/cli-darwin-x64': 1.5.1
-      '@biomejs/cli-linux-arm64': 1.5.1
-      '@biomejs/cli-linux-arm64-musl': 1.5.1
-      '@biomejs/cli-linux-x64': 1.5.1
-      '@biomejs/cli-linux-x64-musl': 1.5.1
-      '@biomejs/cli-win32-arm64': 1.5.1
-      '@biomejs/cli-win32-x64': 1.5.1
+      '@biomejs/cli-darwin-arm64': 1.5.2
+      '@biomejs/cli-darwin-x64': 1.5.2
+      '@biomejs/cli-linux-arm64': 1.5.2
+      '@biomejs/cli-linux-arm64-musl': 1.5.2
+      '@biomejs/cli-linux-x64': 1.5.2
+      '@biomejs/cli-linux-x64-musl': 1.5.2
+      '@biomejs/cli-win32-arm64': 1.5.2
+      '@biomejs/cli-win32-x64': 1.5.2
     dev: true
 
-  /@biomejs/cli-darwin-arm64@1.5.1:
-    resolution: {integrity: sha512-E9pLakmSVHP6UH2uqAghqEkr/IHAIDfDyCedqJVnyFc+uufNTHwB8id4XTiWy/eKIdgxHZsTSE+R+W0IqrTNVQ==}
+  /@biomejs/cli-darwin-arm64@1.5.2:
+    resolution: {integrity: sha512-3JVl08aHKsPyf0XL9SEj1lssIMmzOMAn2t1zwZKBiy/mcZdb0vuyMSTM5haMQ/90wEmrkYN7zux777PHEGrGiw==}
     engines: {node: '>=14.*'}
     cpu: [arm64]
     os: [darwin]
@@ -85,8 +85,8 @@ packages:
     dev: true
     optional: true
 
-  /@biomejs/cli-darwin-x64@1.5.1:
-    resolution: {integrity: sha512-8O1F+FcoCi02JlocyilB6R3y3kT9sRkBCRwYddaBIScQe2hCme/mA2rVzrhCCHhskrclJ51GEKjkEORj4/8c2A==}
+  /@biomejs/cli-darwin-x64@1.5.2:
+    resolution: {integrity: sha512-QAPW9rZb/AgucUx+ogMg+9eJNipQDqvabktC5Tx4Aqb/mFzS6eDqNP7O0SbGz3DtC5Y2LATEj6o6zKIQ4ZT+3w==}
     engines: {node: '>=14.*'}
     cpu: [x64]
     os: [darwin]
@@ -94,8 +94,8 @@ packages:
     dev: true
     optional: true
 
-  /@biomejs/cli-linux-arm64-musl@1.5.1:
-    resolution: {integrity: sha512-Lw9G3LUdhRMp8L8RMeVevnfQCa7luT6ubQ8GRjLju32glxWKefpDrzgfHixGyvTQPlhnYjQ+V8/QQ/I7WPzOoA==}
+  /@biomejs/cli-linux-arm64-musl@1.5.2:
+    resolution: {integrity: sha512-Z29SjaOyO4QfajplNXSjLx17S79oPN42D094zjE24z7C7p3NxvLhKLygtSP9emgaXkcoESe2chOzF4IrGy/rlg==}
     engines: {node: '>=14.*'}
     cpu: [arm64]
     os: [linux]
@@ -103,8 +103,8 @@ packages:
     dev: true
     optional: true
 
-  /@biomejs/cli-linux-arm64@1.5.1:
-    resolution: {integrity: sha512-25gwY4FMzmi1Rl6N835raLq7nzTk+PyEQd88k9Em6dqtI4qpljqmZlMmVjOiwXKe3Ee80J/Vlh7BM36lsHUTEg==}
+  /@biomejs/cli-linux-arm64@1.5.2:
+    resolution: {integrity: sha512-fVLrUgIlo05rO4cNu+Py5EwwmXnXhWH+8KrNlWkr2weMYjq85SihUsuWWKpmqU+bUVR+m5gwfcIXZVWYVCJMHw==}
     engines: {node: '>=14.*'}
     cpu: [arm64]
     os: [linux]
@@ -112,8 +112,8 @@ packages:
     dev: true
     optional: true
 
-  /@biomejs/cli-linux-x64-musl@1.5.1:
-    resolution: {integrity: sha512-5gapxc/VlwTgGRbTc9h8PMTpf8eNahIBauFUGSXncHgayi3VpezKSicgaQ1bb8FahVXf/5eNEVxVARq/or71Ag==}
+  /@biomejs/cli-linux-x64-musl@1.5.2:
+    resolution: {integrity: sha512-ZolquPEjWYUmGeERS8svHOOT7OXEeoriPnV8qptgWJmYF9EO9HUGRn1UtCvdVziDYK+u1A7PxjOdkY1B00ty5A==}
     engines: {node: '>=14.*'}
     cpu: [x64]
     os: [linux]
@@ -121,8 +121,8 @@ packages:
     dev: true
     optional: true
 
-  /@biomejs/cli-linux-x64@1.5.1:
-    resolution: {integrity: sha512-YDM0gZP4UbAuaBI3DVbUuj5X+Omm6uxzD1Qpc6hcduH1kzXzs9L0ee7cn/kJtNndoXR8MlmUS0O0/wWvZf2YaA==}
+  /@biomejs/cli-linux-x64@1.5.2:
+    resolution: {integrity: sha512-ixqJtUHtF0ho1+1DTZQLAEwHGSqvmvHhAAFXZQoaSdABn+IcITYExlFVA3bGvASy/xtPjRhTx42hVwPtLwMHwg==}
     engines: {node: '>=14.*'}
     cpu: [x64]
     os: [linux]
@@ -130,8 +130,8 @@ packages:
     dev: true
     optional: true
 
-  /@biomejs/cli-win32-arm64@1.5.1:
-    resolution: {integrity: sha512-TVpLBOLUMLQmH2VRFBKFr3rgEkr7XvG4QZxHOxWB9Ivc/sQPvg4aHMd8qpgPKXABGUnultyc9t0+WvfIDxuALg==}
+  /@biomejs/cli-win32-arm64@1.5.2:
+    resolution: {integrity: sha512-DN4cXSAoFTdjOoh7f+JITj1uQgQSXt+1pVea9bFrpbgip+ZwkONqQq+jUcmFMMehbp9LuiVtNXFz/ReHn6FY7A==}
     engines: {node: '>=14.*'}
     cpu: [arm64]
     os: [win32]
@@ -139,8 +139,8 @@ packages:
     dev: true
     optional: true
 
-  /@biomejs/cli-win32-x64@1.5.1:
-    resolution: {integrity: sha512-qx8EKwScZmVYZjMPZ6GF3ZUmgg/N6zqh+d8vHA2E43opNCyqIPTl89sOqkc7zd1CyyABDWxsbqI9Ih6xTT6hnQ==}
+  /@biomejs/cli-win32-x64@1.5.2:
+    resolution: {integrity: sha512-YvWWXZmk936FdrXqc2jcP6rfsXsNBIs9MKBQQoVXIihwNNRiAaBD9Iwa/ouU1b7Zxq2zETgeuRewVJickFuVOw==}
     engines: {node: '>=14.*'}
     cpu: [x64]
     os: [win32]
@@ -565,38 +565,38 @@ packages:
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
     dev: true
 
-  /@vitest/expect@1.1.3:
-    resolution: {integrity: sha512-MnJqsKc1Ko04lksF9XoRJza0bGGwTtqfbyrsYv5on4rcEkdo+QgUdITenBQBUltKzdxW7K3rWh+nXRULwsdaVg==}
+  /@vitest/expect@1.2.0:
+    resolution: {integrity: sha512-H+2bHzhyvgp32o7Pgj2h9RTHN0pgYaoi26Oo3mE+dCi1PAqV31kIIVfTbqMO3Bvshd5mIrJLc73EwSRrbol9Lw==}
     dependencies:
-      '@vitest/spy': 1.1.3
-      '@vitest/utils': 1.1.3
+      '@vitest/spy': 1.2.0
+      '@vitest/utils': 1.2.0
       chai: 4.3.10
     dev: true
 
-  /@vitest/runner@1.1.3:
-    resolution: {integrity: sha512-Va2XbWMnhSdDEh/OFxyUltgQuuDRxnarK1hW5QNN4URpQrqq6jtt8cfww/pQQ4i0LjoYxh/3bYWvDFlR9tU73g==}
+  /@vitest/runner@1.2.0:
+    resolution: {integrity: sha512-vaJkDoQaNUTroT70OhM0NPznP7H3WyRwt4LvGwCVYs/llLaqhoSLnlIhUClZpbF5RgAee29KRcNz0FEhYcgxqA==}
     dependencies:
-      '@vitest/utils': 1.1.3
+      '@vitest/utils': 1.2.0
       p-limit: 5.0.0
       pathe: 1.1.1
     dev: true
 
-  /@vitest/snapshot@1.1.3:
-    resolution: {integrity: sha512-U0r8pRXsLAdxSVAyGNcqOU2H3Z4Y2dAAGGelL50O0QRMdi1WWeYHdrH/QWpN1e8juWfVKsb8B+pyJwTC+4Gy9w==}
+  /@vitest/snapshot@1.2.0:
+    resolution: {integrity: sha512-P33EE7TrVgB3HDLllrjK/GG6WSnmUtWohbwcQqmm7TAk9AVHpdgf7M3F3qRHKm6vhr7x3eGIln7VH052Smo6Kw==}
     dependencies:
       magic-string: 0.30.5
       pathe: 1.1.1
       pretty-format: 29.7.0
     dev: true
 
-  /@vitest/spy@1.1.3:
-    resolution: {integrity: sha512-Ec0qWyGS5LhATFQtldvChPTAHv08yHIOZfiNcjwRQbFPHpkih0md9KAbs7TfeIfL7OFKoe7B/6ukBTqByubXkQ==}
+  /@vitest/spy@1.2.0:
+    resolution: {integrity: sha512-MNxSAfxUaCeowqyyGwC293yZgk7cECZU9wGb8N1pYQ0yOn/SIr8t0l9XnGRdQZvNV/ZHBYu6GO/W3tj5K3VN1Q==}
     dependencies:
       tinyspy: 2.2.0
     dev: true
 
-  /@vitest/utils@1.1.3:
-    resolution: {integrity: sha512-Dyt3UMcdElTll2H75vhxfpZu03uFpXRCHxWnzcrFjZxT1kTbq8ALUYIeBgGolo1gldVdI0YSlQRacsqxTwNqwg==}
+  /@vitest/utils@1.2.0:
+    resolution: {integrity: sha512-FyD5bpugsXlwVpTcGLDf3wSPYy8g541fQt14qtzo8mJ4LdEpDKZ9mQy2+qdJm2TZRpjY5JLXihXCgIxiRJgi5g==}
     dependencies:
       diff-sequences: 29.6.3
       estree-walker: 3.0.3
@@ -1133,8 +1133,8 @@ packages:
       slash: 3.0.0
     dev: true
 
-  /happy-dom@13.0.0:
-    resolution: {integrity: sha512-R0j/6qco6wmihOKmelRGt6Coao9gDNEkhcZ8fB73zzr7qo8EaM+BBSmfe2f2hBhC81dykLVVZ1ONcI+zSRoWMQ==}
+  /happy-dom@13.1.4:
+    resolution: {integrity: sha512-f8STa4iuJcpXn7YjgqBEemzinyPAdjlHMxlCNbIERdRIjJO9Z9Cj3XW5LuiEhsURFfl0AOWqj0hQitme4gq+Gg==}
     dependencies:
       css.escape: 1.5.1
       entities: 4.5.0
@@ -1951,8 +1951,8 @@ packages:
     dependencies:
       punycode: 2.3.1
 
-  /vite-node@1.1.3:
-    resolution: {integrity: sha512-BLSO72YAkIUuNrOx+8uznYICJfTEbvBAmWClY3hpath5+h1mbPS5OMn42lrTxXuyCazVyZoDkSRnju78GiVCqA==}
+  /vite-node@1.2.0:
+    resolution: {integrity: sha512-ETnQTHeAbbOxl7/pyBck9oAPZZZo+kYnFt1uQDD+hPReOc+wCjXw4r4jHriBRuVDB5isHmPXxrfc1yJnfBERqg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     dependencies:
@@ -2007,8 +2007,8 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitest@1.1.3(@edge-runtime/vm@3.1.7)(happy-dom@13.0.0):
-    resolution: {integrity: sha512-2l8om1NOkiA90/Y207PsEvJLYygddsOyr81wLQ20Ra8IlLKbyQncWsGZjnbkyG2KwwuTXLQjEPOJuxGMG8qJBQ==}
+  /vitest@1.2.0(@edge-runtime/vm@3.1.7)(happy-dom@13.1.4):
+    resolution: {integrity: sha512-Ixs5m7BjqvLHXcibkzKRQUvD/XLw0E3rvqaCMlrm/0LMsA0309ZqYvTlPzkhh81VlEyVZXFlwWnkhb6/UMtcaQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -2033,17 +2033,17 @@ packages:
         optional: true
     dependencies:
       '@edge-runtime/vm': 3.1.7
-      '@vitest/expect': 1.1.3
-      '@vitest/runner': 1.1.3
-      '@vitest/snapshot': 1.1.3
-      '@vitest/spy': 1.1.3
-      '@vitest/utils': 1.1.3
+      '@vitest/expect': 1.2.0
+      '@vitest/runner': 1.2.0
+      '@vitest/snapshot': 1.2.0
+      '@vitest/spy': 1.2.0
+      '@vitest/utils': 1.2.0
       acorn-walk: 8.3.2
       cac: 6.7.14
       chai: 4.3.10
       debug: 4.3.4
       execa: 8.0.1
-      happy-dom: 13.0.0
+      happy-dom: 13.1.4
       local-pkg: 0.5.0
       magic-string: 0.30.5
       pathe: 1.1.1
@@ -2053,7 +2053,7 @@ packages:
       tinybench: 2.5.1
       tinypool: 0.8.1
       vite: 5.0.11
-      vite-node: 1.1.3
+      vite-node: 1.2.0
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
       - less
