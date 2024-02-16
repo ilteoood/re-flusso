@@ -30,7 +30,7 @@
     "lint": "biome lint ./src ./test ./examples",
     "lint:fix": "biome check --apply ./src ./test ./examples",
     "test": "pnpm run \"/^test:.*/\"",
-    "test:node": "vitest",
+    "test:node": "vitest --config ./vitest-node.config.ts",
     "test:browser": "vitest --config ./vitest-browser.config.ts",
     "test:edge": "vitest --config ./vitest-edge.config.ts",
     "build": "tsup",
