@@ -1,6 +1,7 @@
 export const fromRange = (
 	min: number,
 	max: number,
+	step = 1,
 	strategy?: QueuingStrategy,
 ): ReadableStream<number> => {
 	let currentValue = min;
@@ -9,7 +10,7 @@ export const fromRange = (
 			pull(controller) {
 				if (currentValue <= max) {
 					controller.enqueue(currentValue);
-					currentValue++;
+					currentValue += step;
 				} else {
 					controller.close();
 				}
