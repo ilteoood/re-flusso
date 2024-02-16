@@ -20,6 +20,14 @@ describe("fromRange", () => {
 		expect(destinationArray).toEqual([-1, 0, 1, 2, 3]);
 	});
 
+	test("should generate range with step", async () => {
+		const destinationArray = [];
+
+		await pipeline(fromRange(1, 3, 2), toArray(destinationArray));
+
+		expect(destinationArray).toEqual([1, 3]);
+	});
+
 	test("should generate empty range when min > max", async () => {
 		const destinationArray = [];
 
