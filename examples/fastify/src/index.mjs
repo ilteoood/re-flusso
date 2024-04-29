@@ -3,6 +3,7 @@ import { stringify } from "@ilteoood/re-flusso/ndJson/stringify";
 import { pipeline } from "@ilteoood/re-flusso/pipeline";
 import fastify from "fastify";
 import { Readable } from "node:stream";
+import { ReadableStream } from "node:stream/web";
 
 const server = fastify();
 
