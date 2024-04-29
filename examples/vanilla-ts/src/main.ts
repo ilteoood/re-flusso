@@ -48,7 +48,7 @@ await Promise.all([
 		filter((user) => user.age >= 18),
 		reduce(ageReducer, { people: 0, ages: 0 }),
 		map(calculateMean),
-		map(parseInt),
+		map(Number.parseInt),
 		new WritableStream({ write: writeContent("adult") }),
 	),
 	pipeline(
@@ -57,7 +57,7 @@ await Promise.all([
 		filter((user) => user.age < 18),
 		reduce(ageReducer, { people: 0, ages: 0 }),
 		map(calculateMean),
-		map(parseInt),
+		map(Number.parseInt),
 		new WritableStream({ write: writeContent("child") }),
 	),
 ]);

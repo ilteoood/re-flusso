@@ -1,4 +1,4 @@
-import { setTimeout } from "timers/promises";
+import { setTimeout } from "node:timers/promises";
 import { describe, expect, test } from "vitest";
 
 import { fromIterable } from "../src/fromIterable";
@@ -43,6 +43,6 @@ describe("reduce", () => {
 			toArray(result),
 		);
 
-		expect(result).toEqual([NaN]);
+		expect(result).toEqual([Number.NaN]);
 	});
 });

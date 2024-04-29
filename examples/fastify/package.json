@@ -1,21 +1,21 @@
 {
-  "name": "fastify",
-  "version": "0.0.0",
-  "private": true,
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "node --watch ./src/index.mjs"
-  },
-  "engines": {
-    "node": ">=20.6.0"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "fastify": "^4.26.2",
-    "@faker-js/faker": "^8.4.1",
-    "@ilteoood/re-flusso": "workspace:^"
-  }
+	"name": "fastify",
+	"version": "0.0.0",
+	"private": true,
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "node --watch ./src/index.mjs"
+	},
+	"engines": {
+		"node": ">=20.6.0"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"fastify": "^4.26.2",
+		"@faker-js/faker": "^8.4.1",
+		"@ilteoood/re-flusso": "workspace:^"
+	}
 }

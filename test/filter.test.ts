@@ -1,4 +1,4 @@
-import { setTimeout } from "timers/promises";
+import { setTimeout } from "node:timers/promises";
 import { describe, expect, it } from "vitest";
 import { filter } from "../src/filter";
 import { fromIterable } from "../src/fromIterable";
