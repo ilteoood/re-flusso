@@ -159,16 +159,16 @@ merge(
 </details>
 
 <details>
-<summary>NDJSON</summary>
+<summary>ndJson</summary>
 
 <details>
-<summary>&nbsp;&nbsp;&nbsp;&nbsp;parser</summary>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;parse</summary>
 
 ```javascript
-import { parser } from '@ilteoood/re-flusso/ndJson/parser';
+import { parse } from '@ilteoood/re-flusso/ndJson/parse';
 
 .pipeThrough(
-    parser()
+    parse()
 )
 ```
 </details>
