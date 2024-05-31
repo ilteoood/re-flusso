@@ -6,19 +6,27 @@ import { pipeline } from "../../src/pipeline";
 import { toArray } from "../../src/toArray";
 
 describe("lessThanEqual", () => {
-    test("should work with empty list", async () => {
-        const destinationArray = [];
+	test("should work with empty list", async () => {
+		const destinationArray = [];
 
-        await pipeline(fromIterable([]), lessThanEqual(0), toArray(destinationArray));
+		await pipeline(
+			fromIterable([]),
+			lessThanEqual(0),
+			toArray(destinationArray),
+		);
 
-        expect(destinationArray).toEqual([]);
-    });
+		expect(destinationArray).toEqual([]);
+	});
 
-    test("should correctly filter numbers", async () => {
-        const destinationArray = [];
+	test("should correctly filter numbers", async () => {
+		const destinationArray = [];
 
-        await pipeline(fromRange(1, 3), lessThanEqual(3), toArray(destinationArray));
+		await pipeline(
+			fromRange(1, 3),
+			lessThanEqual(3),
+			toArray(destinationArray),
+		);
 
-        expect(destinationArray).toEqual([1, 2, 3]);
-    });
+		expect(destinationArray).toEqual([1, 2, 3]);
+	});
 });
