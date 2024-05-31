@@ -213,6 +213,24 @@ fromRange(1, 3)
 ```
 </details>
 <details>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;greaterThan</summary>
+
+```javascript
+import { greaterThan } from '@ilteoood/re-flusso/numbers/greaterThan';
+
+greaterThan(3)
+```
+</details>
+<details>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;greaterThanEqual</summary>
+
+```javascript
+import { greaterThanEqual } from '@ilteoood/re-flusso/numbers/greaterThanEqual';
+
+greaterThanEqual(3)
+```
+</details>
+<details>
 <summary>&nbsp;&nbsp;&nbsp;&nbsp;lessThan</summary>
 
 ```javascript
@@ -362,3 +380,6 @@ const destinationArray = [];
 )
 ```
 </details>
+
+## Acknowledgements
+This project was kindly sponsored by [Nearform](https://nearform.com/).
