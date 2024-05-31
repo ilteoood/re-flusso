@@ -6,19 +6,19 @@ import { fromIterable } from "../../src/fromIterable";
 import { lessThan } from "../../src/numbers/lessThan";
 
 describe("lessThan", () => {
-    test("should work with empty list", async () => {
-        const destinationArray = [];
+	test("should work with empty list", async () => {
+		const destinationArray = [];
 
-        await pipeline(fromIterable([]), lessThan(0), toArray(destinationArray));
+		await pipeline(fromIterable([]), lessThan(0), toArray(destinationArray));
 
-        expect(destinationArray).toEqual([]);
-    });
+		expect(destinationArray).toEqual([]);
+	});
 
-    test("should correctly filter numbers", async () => {
-        const destinationArray = [];
+	test("should correctly filter numbers", async () => {
+		const destinationArray = [];
 
-        await pipeline(fromRange(1, 3), lessThan(3), toArray(destinationArray));
+		await pipeline(fromRange(1, 3), lessThan(3), toArray(destinationArray));
 
-        expect(destinationArray).toEqual([1, 2]);
-    });
+		expect(destinationArray).toEqual([1, 2]);
+	});
 });

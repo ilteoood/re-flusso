@@ -67,6 +67,20 @@ concat(
 </details>
 
 <details>
+<summary>defaultTo</summary>
+
+```javascript
+import { defaultTo } from '@ilteoood/re-flusso/defaultTo';
+
+await pipeline(
+    fromIterable([null, undefined]),
+    defaultTo(1),
+    toIterable([])
+)
+```
+</details>
+
+<details>
 <summary>text</summary>
 
 ```javascript
