@@ -221,6 +221,15 @@ import { lessThan } from '@ilteoood/re-flusso/numbers/lessThan';
 lessThan(3)
 ```
 </details>
+<details>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;lessThan</summary>
+
+```javascript
+import { lessThanEqual } from '@ilteoood/re-flusso/numbers/lessThanEqual';
+
+lessThanEqual(3)
+```
+</details>
 </details>
 </details>
 
