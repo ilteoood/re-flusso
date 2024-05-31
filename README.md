@@ -212,6 +212,15 @@ import { fromRange } from '@ilteoood/re-flusso/numbers/fromRange';
 fromRange(1, 3)
 ```
 </details>
+<details>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;lessThan</summary>
+
+```javascript
+import { lessThan } from '@ilteoood/re-flusso/numbers/lessThan';
+
+lessThan(3)
+```
+</details>
 </details>
 </details>
 
