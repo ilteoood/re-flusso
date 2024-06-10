@@ -81,6 +81,20 @@ await pipeline(
 </details>
 
 <details>
+<summary>equals</summary>
+
+```javascript
+import { equals } from '@ilteoood/re-flusso/equals';
+
+await pipeline(
+    fromIterable([1, 2, 3]),
+    equals(2),
+    toIterable([])
+)
+```
+</details>
+
+<details>
 <summary>text</summary>
 
 ```javascript
@@ -396,4 +410,4 @@ const destinationArray = [];
 </details>
 
 ## Acknowledgements
-This project was kindly sponsored by [Nearform](https://nearform.com/).
+This project is kindly sponsored by [Nearform](https://nearform.com/).
