@@ -1,12 +1,12 @@
 import { filter } from "./filter";
 
-export const equals = <T>(
-	value: T,
+export const has = <T>(
+	values: Set<T>,
 	writableStrategy?: QueuingStrategy,
 	readableStrategy?: QueuingStrategy,
 ) => {
 	return filter(
-		(chunk: T) => chunk === value,
+		(chunk: T) => values.has(chunk),
 		writableStrategy,
 		readableStrategy,
 	);

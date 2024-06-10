@@ -147,6 +147,18 @@ fromIterable(new Set([1, 2, 3]))
 </details>
 
 <details>
+<summary>has</summary>
+
+```javascript
+import { has } from '@ilteoood/re-flusso/has';
+
+.pipeThrough(
+    has(new Set([1, 2, 3]))
+)
+```
+</details>
+
+<details>
 <summary>last</summary>
 
 ```javascript
