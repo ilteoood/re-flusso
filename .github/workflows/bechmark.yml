@@ -1,7 +1,7 @@
 name: Benchmark workflow
 on: [push, pull_request]
 jobs:
-  test:
+  benchmark:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -16,4 +16,4 @@ jobs:
         with:
           version: latest
       - run: pnpm install --frozen-lockfile
-      - run: pnpm benchmarks
+      - run: pnpm run benchmark
