@@ -1,4 +1,4 @@
-import { setTimeout } from 'node:timers/promises';
+import { setTimeout } from "node:timers/promises";
 import { describe, expect, it } from "vitest";
 import { forEach } from "../src/forEach";
 import { fromIterable } from "../src/fromIterable";
@@ -9,7 +9,7 @@ describe("forEach", () => {
 		let destination = 0;
 
 		const forEachStream = forEach<number>((value) => {
-			destination = value
+			destination = value;
 		});
 
 		await fromIterable(sourceArray).pipeTo(forEachStream);
@@ -22,7 +22,7 @@ describe("forEach", () => {
 		let destination = 0;
 
 		const forEachStream = forEach<number>((value) => {
-			destination = value
+			destination = value;
 		});
 
 		await fromIterable(sourceArray).pipeTo(forEachStream);
@@ -34,9 +34,9 @@ describe("forEach", () => {
 		// @ts-expect-error undefined parameter for test
 		const forEachStream = forEach<number>(undefined);
 
-		expect(
-			fromIterable([1]).pipeTo(forEachStream),
-		).rejects.toThrow("callbackfn is not a function");
+		expect(fromIterable([1]).pipeTo(forEachStream)).rejects.toThrow(
+			"callbackfn is not a function",
+		);
 	});
 
 	it("should handle promises", async () => {
