@@ -18,16 +18,11 @@ describe("map-filter-reduce", () => {
 	});
 
 	bench("re-flusso", async () => {
-		let result = 0;
-
 		await pipeline(
 			fromIterable(initialArray),
 			map((value) => value * 2),
 			filter((value) => value % 2 === 0),
 			sum(),
-			forEach<number>((sumResult) => {
-				result = sumResult;
-			}),
 		);
 	});
 });
