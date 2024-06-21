@@ -1,6 +1,6 @@
 export const reduce = <T, A>(
-	reducer: (accumulator: A | undefined, currentValue: T) => A | Promise<A>,
-	initialValue: A | undefined,
+	reducer: (accumulator: A, currentValue: T) => A | Promise<A>,
+	initialValue: A,
 	writableStrategy?: QueuingStrategy,
 	readableStrategy?: QueuingStrategy,
 ) => {
