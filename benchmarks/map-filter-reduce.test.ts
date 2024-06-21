@@ -11,18 +11,23 @@ describe("map-filter-reduce", () => {
 	const initialArray = new Array(10_000).fill(0).map((_, index) => index);
 
 	bench("normal", () => {
-		initialArray
+		const result = initialArray
 			.map((value) => value * 2)
 			.filter((value) => value % 2 === 0)
 			.reduce((accumulator, value) => accumulator + value, 0);
 	});
 
 	bench("re-flusso", async () => {
+		let result: number;
+
 		await pipeline(
 			fromIterable(initialArray),
 			map((value) => value * 2),
 			filter((value) => value % 2 === 0),
 			sum(),
+			forEach<number>((sumResult) => {
+				result = sumResult;
+			}),
 		);
 	});
 });
