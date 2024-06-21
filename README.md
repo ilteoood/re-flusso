@@ -270,7 +270,9 @@ fromRange(1, 3)
 ```javascript
 import { greaterThan } from '@ilteoood/re-flusso/numbers/greaterThan';
 
-greaterThan(3)
+.pipeThrough(
+    greaterThan(3)
+)
 ```
 </details>
 <details>
@@ -279,7 +281,9 @@ greaterThan(3)
 ```javascript
 import { greaterThanEqual } from '@ilteoood/re-flusso/numbers/greaterThanEqual';
 
-greaterThanEqual(3)
+.pipeThrough(
+    greaterThanEqual(3)
+)
 ```
 </details>
 <details>
@@ -288,7 +292,21 @@ greaterThanEqual(3)
 ```javascript
 import { lessThan } from '@ilteoood/re-flusso/numbers/lessThan';
 
-lessThan(3)
+.pipeThrough(
+    lessThan(3)
+)
+```
+</details>
+<details>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;sum</summary>
+
+```javascript
+import { sum } from '@ilteoood/re-flusso/numbers/sum';
+
+.pipeThrough(
+    sum()
+)
+
 ```
 </details>
 <details>
