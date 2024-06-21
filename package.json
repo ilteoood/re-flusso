@@ -23,17 +23,18 @@
     "url": "https://github.com/ilteoood/re-flusso"
   },
   "scripts": {
-    "format": "biome format ./src ./test ./examples",
+    "format": "biome format ./src ./test ./examples ./benchmarks",
     "format:fix": "pnpm run format --write",
-    "sort": "biome check --apply-unsafe ./src ./test ./examples",
-    "lint": "biome lint ./src ./test ./examples",
-    "lint:fix": "biome check --write ./src ./test ./examples",
+    "sort": "biome check --apply-unsafe ./src ./test ./examples ./benchmarks",
+    "lint": "biome lint ./src ./test ./examples ./benchmarks",
+    "lint:fix": "biome check --write ./src ./test ./examples ./benchmarks",
     "test": "pnpm run \"/^test:.*/\"",
     "test:node": "vitest --config ./vitest-node.config.ts",
     "test:browser": "vitest --config ./vitest-browser.config.ts",
     "test:edge": "vitest --config ./vitest-edge.config.ts",
     "build": "tsup",
-    "prepublish": "pnpm run build"
+    "prepublish": "pnpm run build",
+    "benchmark": "vitest bench --config ./vitest-benchmark.config.ts"
   },
   "keywords": [
     "streams",
