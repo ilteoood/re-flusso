@@ -7,27 +7,33 @@ describe("forEach", () => {
 	it("should run on empty stream", async () => {
 		const sourceArray = [];
 		let destination = 0;
+		let destinationIndex = 0;
 
-		const forEachStream = forEach<number>((value) => {
+		const forEachStream = forEach<number>((value, index) => {
 			destination = value;
+			destinationIndex = index;
 		});
 
 		await fromIterable(sourceArray).pipeTo(forEachStream);
 
 		expect(destination).toEqual(0);
+		expect(destinationIndex).toEqual(0);
 	});
 
 	it("should run on stream", async () => {
 		const sourceArray = [1, 2, 3];
 		let destination = 0;
+		let destinationIndex = 0;
 
-		const forEachStream = forEach<number>((value) => {
+		const forEachStream = forEach<number>((value, index) => {
 			destination = value;
+			destinationIndex = index;
 		});
 
 		await fromIterable(sourceArray).pipeTo(forEachStream);
 
 		expect(destination).toEqual(sourceArray.at(-1));
+		expect(destinationIndex).toEqual(sourceArray.length - 1);
 	});
 
 	it("should throw if parameter is undefined", async () => {
@@ -42,14 +48,17 @@ describe("forEach", () => {
 	it("should handle promises", async () => {
 		const sourceArray = [1, 2, 3];
 		let destination = 0;
+		let destinationIndex = 0;
 
-		const forEaschStream = forEach<number>(async (value) => {
+		const forEaschStream = forEach<number>(async (value, index) => {
 			await setTimeout(0);
 			destination = value;
+			destinationIndex = index;
 		});
 
 		await fromIterable(sourceArray).pipeTo(forEaschStream);
 
 		expect(destination).toEqual(sourceArray.at(-1));
+		expect(destinationIndex).toEqual(sourceArray.length - 1);
 	});
 });

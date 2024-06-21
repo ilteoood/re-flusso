@@ -133,6 +133,18 @@ const firstItemsToKeep = 3;
 </details>
 
 <details>
+<summary>forEach</summary>
+
+```javascript
+import { forEach } from '@ilteoood/re-flusso/forEach';
+
+.pipeTo(
+    forEach(console.log)
+)
+```
+</details>
+
+<details>
 <summary>fromIterable</summary>
 
 ```javascript
