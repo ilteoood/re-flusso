@@ -5,17 +5,20 @@ export const concat = (...readableStreams: ReadableStream[]) => {
 
 	return new ReadableStream({
 		async pull(controller) {
-			if (!currentReader) {
-				controller.close();
-				return;
-			}
+			while (true) {
+				if (!currentReader) {
+					controller.close();
+					return;
+				}
 
-			const readResult = await currentReader.read();
+				const readResult = await currentReader.read();
 
-			if (readResult.done) {
-				currentReader = fallbackedStreams[++currentReaderIndex]?.getReader();
-			} else {
-				controller.enqueue(readResult.value);
+				if (readResult.done) {
+					currentReader = fallbackedStreams[++currentReaderIndex]?.getReader();
+				} else {
+					controller.enqueue(readResult.value);
+					return;
+				}
 			}
 		},
 	});
