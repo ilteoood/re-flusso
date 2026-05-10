@@ -9,8 +9,8 @@ export default defineConfig({
     clean: true,
     dts: {
         compilerOptions: {
-            baseUrl: undefined,
-            paths: undefined,
+            baseUrl: "",
+            paths: {},
         },
     },
 })
