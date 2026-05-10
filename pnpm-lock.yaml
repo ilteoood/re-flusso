@@ -25,7 +25,7 @@ importers:
         version: 13.0.0
       happy-dom:
         specifier: ^20.0.11
-        version: 20.8.9
+        version: 20.9.0
       tsup:
         specifier: ^8.5.1
         version: 8.5.1(postcss@8.5.8)(typescript@5.9.3)
@@ -34,7 +34,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^4.0.16
-        version: 4.0.16(@edge-runtime/vm@5.0.0)(@types/node@25.0.3)(happy-dom@20.8.9)
+        version: 4.0.16(@edge-runtime/vm@5.0.0)(@types/node@25.0.3)(happy-dom@20.9.0)
 
   examples/fastify:
     dependencies:
@@ -1020,8 +1020,8 @@ packages:
     resolution: {integrity: sha512-tvZgpqk6fz4BaNZ66ZsRaZnbHvP/jG3uKJvAZOwEVUL4RTA5nJeeLYfyN9/VA8NX/V3IBG+hkeuGpKjvELkVhA==}
     engines: {node: 20 || >=22}
 
-  happy-dom@20.8.9:
-    resolution: {integrity: sha512-Tz23LR9T9jOGVZm2x1EPdXqwA37G/owYMxRwU0E4miurAtFsPMQ1d2Jc2okUaSjZqAFz2oEn3FLXC5a0a+siyA==}
+  happy-dom@20.9.0:
+    resolution: {integrity: sha512-GZZ9mKe8r646NUAf/zemnGbjYh4Bt8/MqASJY+pSm5ZDtc3YQox+4gsLI7yi1hba6o+eCsGxpHn5+iEVn31/FQ==}
     engines: {node: '>=20.0.0'}
 
   ieee754@1.2.1:
@@ -2248,7 +2248,7 @@ snapshots:
       minipass: 7.1.2
       path-scurry: 2.0.1
 
-  happy-dom@20.8.9:
+  happy-dom@20.9.0:
     dependencies:
       '@types/node': 25.0.3
       '@types/whatwg-mimetype': 3.0.2
@@ -2651,7 +2651,7 @@ snapshots:
       '@types/node': 25.0.3
       fsevents: 2.3.3
 
-  vitest@4.0.16(@edge-runtime/vm@5.0.0)(@types/node@25.0.3)(happy-dom@20.8.9):
+  vitest@4.0.16(@edge-runtime/vm@5.0.0)(@types/node@25.0.3)(happy-dom@20.9.0):
     dependencies:
       '@vitest/expect': 4.0.16
       '@vitest/mocker': 4.0.16(vite@6.4.2(@types/node@25.0.3))
@@ -2676,7 +2676,7 @@ snapshots:
     optionalDependencies:
       '@edge-runtime/vm': 5.0.0
       '@types/node': 25.0.3
-      happy-dom: 20.8.9
+      happy-dom: 20.9.0
     transitivePeerDependencies:
       - jiti
       - less
