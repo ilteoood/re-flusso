@@ -22,6 +22,7 @@ export default defineConfig({
                 noUnusedLocals: true,
                 noUnusedParameters: true,
                 noFallthroughCasesInSwitch: true,
+                baseUrl: undefined,
             },
             include: ['src'],
         },
