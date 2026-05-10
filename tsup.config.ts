@@ -8,6 +8,9 @@ export default defineConfig({
     format: ['cjs', 'esm'],
     clean: true,
     dts: {
-        tsconfig: './tsconfig.dts.json',
+        compilerOptions: {
+            baseUrl: "",
+            paths: {},
+        },
     },
 })
