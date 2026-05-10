@@ -35,8 +35,9 @@ export const pipeline: PipelineType = ((
 ): ReadableStream | Promise<void> => {
 	const lastPipelineItem = streams.length - 1;
 
-	return streams.reduce(
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	return streams.reduce<any>(
 		pipelineReducerBuilder(lastPipelineItem),
 		source,
-	) as ReadableStream | Promise<void>;
+	);
 }) as PipelineType;
