@@ -7,5 +7,9 @@ export default defineConfig({
     entry: tsFiles,
     format: ['cjs', 'esm'],
     clean: true,
-    dts: true
+    dts: {
+        compilerOptions: {
+            ignoreDeprecations: '6.0',
+        },
+    },
 })
