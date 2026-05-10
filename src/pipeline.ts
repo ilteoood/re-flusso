@@ -17,7 +17,11 @@ type PipelineType = TransformPipeline & WritablePipeline & MixedPipeline;
 
 const pipelineReducerBuilder =
 	(lastPipelineItem: number) =>
-	(pipeline, stream: WritableStream | TransformStream, index: number) => {
+	(
+		pipeline: ReadableStream | Promise<void>,
+		stream: WritableStream | TransformStream,
+		index: number,
+	): ReadableStream | Promise<void> => {
 		if (index === lastPipelineItem && stream instanceof WritableStream) {
 			return pipeline.pipeTo(stream);
 		}
@@ -31,5 +35,8 @@ export const pipeline: PipelineType = (
 ) => {
 	const lastPipelineItem = streams.length - 1;
 
-	return streams.reduce(pipelineReducerBuilder(lastPipelineItem), source);
+	return streams.reduce<ReadableStream | Promise<void>>(
+		pipelineReducerBuilder(lastPipelineItem),
+		source,
+	);
 };
