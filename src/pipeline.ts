@@ -29,16 +29,14 @@ const pipelineReducerBuilder =
 		return pipeline.pipeThrough(stream as TransformStream);
 	};
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const pipeline: PipelineType = ((
 	source: ReadableStream,
 	...streams: (TransformStream | WritableStream)[]
 ): ReadableStream | Promise<void> => {
 	const lastPipelineItem = streams.length - 1;
 
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	return streams.reduce<any>(
+	return streams.reduce(
 		pipelineReducerBuilder(lastPipelineItem),
 		source,
-	);
+	) as ReadableStream | Promise<void>;
 }) as PipelineType;
