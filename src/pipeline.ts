@@ -39,5 +39,5 @@ export const pipeline: PipelineType = ((
 	return streams.reduce(
 		pipelineReducerBuilder(lastPipelineItem),
 		source,
-	) as ReadableStream | Promise<void>;
+	) as unknown as ReadableStream | Promise<void>;
 }) as PipelineType;
