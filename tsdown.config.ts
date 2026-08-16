@@ -1,5 +1,5 @@
 import { globSync } from 'glob';
-import { defineConfig } from 'tsup';
+import { defineConfig } from 'tsdown';
 
 const tsFiles = globSync('./src/**/*.ts', { posix: true });
 
@@ -7,5 +7,5 @@ export default defineConfig({
     entry: tsFiles,
     format: ['cjs', 'esm'],
     clean: true,
-    dts: './tsconfig.dts.json',
+    dts: { tsconfig: './tsconfig.dts.json' },
 });
