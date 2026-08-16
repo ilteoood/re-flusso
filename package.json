@@ -32,7 +32,7 @@
     "test:node": "vitest --config ./vitest-node.config.ts",
     "test:browser": "vitest --config ./vitest-browser.config.ts",
     "test:edge": "vitest --config ./vitest-edge.config.ts",
-    "build": "tsup",
+    "build": "tsdown",
     "prepublish": "pnpm run build",
     "benchmark": "vitest bench --config ./vitest-benchmark.config.ts"
   },
@@ -52,8 +52,8 @@
     "fast-json-stringify": "^7.0.1",
     "glob": "^13.0.0",
     "happy-dom": "^20.0.11",
-    "tsup": "^8.5.1",
-    "typescript": "^6.0.3",
+    "tsdown": "^0.22.14",
+    "typescript": "^7.0.2",
     "vitest": "^4.0.16"
   }
 }
