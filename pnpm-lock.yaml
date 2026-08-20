@@ -55,8 +55,8 @@ importers:
         version: link:../..
     devDependencies:
       typescript:
-        specifier: ^6.0.3
-        version: 6.0.3
+        specifier: ^7.0.2
+        version: 7.0.2
       vite:
         specifier: ^8.0.13
         version: 8.2.1(@types/node@26.1.2)(esbuild@0.27.2)
@@ -1200,11 +1200,6 @@ packages:
       unrun:
         optional: true
 
-  typescript@6.0.3:
-    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
-    engines: {node: '>=14.17'}
-    hasBin: true
-
   typescript@7.0.2:
     resolution: {integrity: sha512-8FYau96o3NKOhbjKi/qNvG/W5jhzxkbdm5sj9AbZ/5T5sWqn3hJgLfGx27sRKZWTvyzCP8dLRBTf5tBTSRVUNA==}
     engines: {node: '>=16.20.0'}
@@ -2173,8 +2168,6 @@ snapshots:
       - '@volar/typescript'
       - oxc-resolver
       - vue-tsc
-
-  typescript@6.0.3: {}
 
   typescript@7.0.2:
     optionalDependencies:
