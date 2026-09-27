@@ -40,7 +40,7 @@ describe("forEach", () => {
 		// @ts-expect-error undefined parameter for test
 		const forEachStream = forEach<number>(undefined);
 
-		expect(fromIterable([1]).pipeTo(forEachStream)).rejects.toThrow(
+		await expect(fromIterable([1]).pipeTo(forEachStream)).rejects.toThrow(
 			"callbackfn is not a function",
 		);
 	});
