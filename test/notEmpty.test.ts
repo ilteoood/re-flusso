@@ -15,13 +15,13 @@ describe("notEmpty", () => {
 	});
 
 	test("should throw error if stream is empty", async () => {
-		expect(pipeline(fromIterable([]), notEmpty(), toArray([]))).rejects.toThrow(
-			"Stream is empty",
-		);
+		await expect(
+			pipeline(fromIterable([]), notEmpty(), toArray([])),
+		).rejects.toThrow("Stream is empty");
 	});
 
 	test("should throw custom error if stream is empty", async () => {
-		expect(
+		await expect(
 			pipeline(
 				fromIterable([]),
 				notEmpty(new Error("Custom error")),

@@ -23,14 +23,14 @@ describe("toArray", () => {
 
 	it("should throw if parameter is undefined", async () => {
 		// @ts-expect-error undefined parameter for test
-		expect(fromIterable([1]).pipeTo(toArray(undefined))).rejects.toThrow(
+		await expect(fromIterable([1]).pipeTo(toArray(undefined))).rejects.toThrow(
 			"Cannot read properties of undefined (reading 'push')",
 		);
 	});
 
 	it("should not throw if source stream is empty", async () => {
 		// @ts-expect-error undefined parameter for test
-		expect(
+		await expect(
 			fromIterable([]).pipeTo(toArray(undefined)),
 		).resolves.toBeUndefined();
 	});

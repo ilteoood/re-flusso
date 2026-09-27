@@ -34,7 +34,7 @@ describe("filter", () => {
 		// @ts-expect-error undefined parameter for test
 		const filterStream = filter<number>(undefined);
 
-		expect(
+		await expect(
 			fromIterable([1])
 				.pipeThrough(filterStream)
 				.pipeTo(toArray([] as number[])),

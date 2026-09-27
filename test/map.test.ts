@@ -34,7 +34,7 @@ describe("map", () => {
 		// @ts-expect-error undefined parameter for test
 		const mapStream = map<number, number>(undefined);
 
-		expect(
+		await expect(
 			fromIterable([1])
 				.pipeThrough(mapStream)
 				.pipeTo(toArray([] as number[])),
